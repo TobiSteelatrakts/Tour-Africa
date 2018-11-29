@@ -1,0 +1,83 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Kollatunez Tours</ion-title>
+   <!-- <button ion-buttons (click)="gotoregister()" item-right><ion-icon ios="ios-add" md="md-add"></ion-icon></button> -->
+
+   <ion-buttons end>
+      <button (click)="gotoregister()" ion-button icon-only>SignUp
+          <ion-icon color="nucolor" ios="ios-add" md="md-add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div id="name" class="animated slideInUp delay-2s">
+        LOGIN
+    </div>
+
+
+    <form [formGroup]="userDetailsForm" id="formNewProduct" (ngSubmit) = "onsubmitpin(userDetailsForm.value)">
+
+      <ion-item *ngIf="touristnameset==false">
+        <ion-label>Your Name</ion-label>
+        <ion-input type="text" formControlName="name" required [(ngModel)]='namee'></ion-input>
+      </ion-item>
+
+      <div>
+          <ng-container *ngFor="let validation of account_validation_messages.name" >
+              <ion-label style="color: red" *ngIf="userDetailsForm.get('name').hasError(validation.type) && (userDetailsForm.get('name').dirty || userDetailsForm.get('name').touched)">{{validation.message}}</ion-label>
+        </ng-container>
+       </div>
+
+          <ion-item>
+            <ion-label>Username</ion-label>
+            <ion-input type="text" formControlName="username" required [(ngModel)]='usernamee'></ion-input>
+          </ion-item>
+
+          <div>
+              <ng-container *ngFor="let validation of account_validation_messages.username" >
+                  <ion-label style="color: red" *ngIf="userDetailsForm.get('username').hasError(validation.type) && (userDetailsForm.get('username').dirty || userDetailsForm.get('username').touched)">{{validation.message}}</ion-label>
+            </ng-container>
+           </div>
+
+
+
+          <ion-item>
+            <ion-label>Password</ion-label>
+            <ion-input type="password" formControlName="password" required [(ngModel)]='passwordd'></ion-input>
+
+
+          </ion-item>
+
+          <div>
+              <ng-container *ngFor="let validation of account_validation_messages.password" >
+                  <ion-label style="color: red" *ngIf="userDetailsForm.get('password').hasError(validation.type) && (userDetailsForm.get('password').dirty || userDetailsForm.get('password').touched)">{{validation.message}}</ion-label>
+            </ng-container>
+           </div>
+
+
+
+        <div>
+            <button ion-button id="butgrad" block type="submit" [disabled]="!userDetailsForm.get('password').valid || !userDetailsForm.get('username').valid">Sign In</button>
+          <!-- <button ion-button secondary block (click)="logmein()" [disabled]="!closed" type="submit">Sign In</button> -->
+        </div>
+      </form>
+
+      <div class="forgotpassword"><span color="primary">forgot password --></span></div>
+<ion-fab right bottom>
+  <button ion-fab id="butgrad" (click)='closeap()'><ion-icon name="close"></ion-icon></button>
+</ion-fab>
+
+
+
+</ion-content>

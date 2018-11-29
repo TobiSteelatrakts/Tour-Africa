@@ -1,0 +1,44 @@
+page-home {
+  #floating-panel {
+
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    left: 5px;
+    z-index: 5;
+    // background-color: #fff;
+    // padding: 5px;
+    // border: 1px solid #999;
+    // text-align: center;
+    // font-family: 'Roboto','sans-serif';
+    // line-height: 30px;
+    // padding-left: 10px;
+  }
+
+  #floating-panel2 {
+
+    position: absolute;
+    top: 50px;
+    right: 5px;
+    left: 5px;
+    z-index: 5;
+
+  }
+  #bookid {
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+    left: 5px;
+    z-index: 5;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+  cursor: pointer;
+  }
+
+  .button:hover {
+    background-color: #2C3E50;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+  }
+}
