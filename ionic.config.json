@@ -1,0 +1,7 @@
+{
+  "name": "KollatunezTours",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
